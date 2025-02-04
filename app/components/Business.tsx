@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn } from "../styles/animations";
-import { features } from "../constants";
+import { Sobre } from "../constants";
 import Button from "./Button";
 
 interface featureCardProps {
@@ -15,7 +15,7 @@ interface featureCardProps {
 const FeatureCard = ({ icon, title, content, index }: featureCardProps) => (
   <div
     className={`flex p-6 rounded-[20px] ${
-      index !== features.length - 1 ? "mb-6" : "mb-0"
+      index !== Sobre.length - 1 ? "mb-6" : "mb-0"
     } feature-card`}
   >
     <div className="w-[64px] h-[64px] rounded-full flexCenter bg-dimBlue">
@@ -40,7 +40,7 @@ const FeatureCard = ({ icon, title, content, index }: featureCardProps) => (
 );
 
 const Business = () => (
-  <section id="features" className="section">
+  <section id="Sobre" className="section">
     <motion.div
       className="sectionInfo"
       variants={slideIn("left", "tween", 0.2, 1.5)}
@@ -60,7 +60,7 @@ const Business = () => (
     </motion.div>
 
     <div className="sectionImg flex-col">
-      {features.map((feature, index) => (
+      {Sobre.map((feature, index) => (
         <motion.div
           key={feature.id}
           variants={fadeIn("left", "spring", index * 0.5, 1)}

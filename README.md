@@ -5,7 +5,7 @@
 
 
 This was my first project using Vite. Initially made using tutorial of [JavaScipt Mastery](https://youtu.be/_oO4Qi5aVZs?si=uIWyu_1FoElOJueH). Now it is made on next js using typescript.
-Features added other than Tutorial:-
+Sobre added other than Tutorial:-
 - Upgraded from Node.JS to Bun.JS (A Faster JavaScript Runtime).
 - Upgraded from JavaScript to TypeScript.
 - Upgraded from React.JS to Next.JS.
@@ -22,7 +22,7 @@ Features added other than Tutorial:-
   </a>
 </p>
 
-A website which is a product page of a Bank displaying its products features, clients , feedbacks and many more.
+A website which is a Produto page of a Bank displaying its Produtos Sobre, clients , feedbacks and many more.
 
 ### The project is hosted on Vercel : [Hoobank](https://hoobank-alpha-nine.vercel.app/)
 

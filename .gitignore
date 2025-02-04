@@ -11,7 +11,7 @@ lerna-debug.log*
 /.next/
 /out/
 
-# production
+# Produtoion
 /build
 
 node_modules
@@ -29,3 +29,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.vercel

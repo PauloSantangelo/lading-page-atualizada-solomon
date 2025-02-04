@@ -18,23 +18,23 @@ import {
   export const navLinks = [
     {
       id: "home",
-      title: "Home",
+      title: "Início",
     },
     {
-      id: "features",
-      title: "Features",
+      id: "Sobre",
+      title: "Sobre",
     },
     {
-      id: "product",
-      title: "Product",
+      id: "Produto",
+      title: "Produto",
     },
     {
       id: "clients",
-      title: "Clients",
+      title: "Feedback",
     },
   ];
   
-  export const features = [
+  export const Sobre = [
     {
       id: "feature-1",
       icon: star,
@@ -88,81 +88,61 @@ import {
   export const stats = [
     {
       id: "stats-1",
-      title: "Usuários",
-      value: "1000+",
+      title: "Ativos Monitorados",
+      value: "+5000",
     },
     {
       id: "stats-2",
-      title: "Pessoas Impactadas",
-      value: "+20.000",
+      title: "GERENCIADOS",
+      value: "R$100.000+",
     },
     {
       id: "stats-3",
-      title: "Gerindo",
-      value: "$100M+",
+      title: "Focado no seu sucesso",
+      value: "100%",
     },
   ];
   
   export const footerLinks = [
     {
-      title: "Useful Links",
+      title: "Links Úteis",
       links: [
         {
-          name: "Content",
+          name: "Plataforma Oficial",
           link: "https://www.hoobank.com/content/",
         },
         {
-          name: "How it Works",
+          name: "Sobre nós",
           link: "https://www.hoobank.com/how-it-works/",
         },
         {
-          name: "Create",
-          link: "https://www.hoobank.com/create/",
-        },
-        {
-          name: "Explore",
-          link: "https://www.hoobank.com/explore/",
-        },
-        {
-          name: "Terms & Services",
+          name: "Termos & Serviços",
           link: "https://www.hoobank.com/terms-and-services/",
         },
       ],
     },
     {
-      title: "Community",
+      title: "Comunidade",
       links: [
         {
-          name: "Help Center",
+          name: "Central de Suporte",
           link: "https://www.hoobank.com/help-center/",
         },
         {
-          name: "Partners",
+          name: "Instagram",
           link: "https://www.hoobank.com/partners/",
-        },
-        {
-          name: "Suggestions",
-          link: "https://www.hoobank.com/suggestions/",
-        },
-        {
-          name: "Blog",
-          link: "https://www.hoobank.com/blog/",
-        },
-        {
-          name: "Newsletters",
-          link: "https://www.hoobank.com/newsletters/",
         },
       ],
     },
     {
-      title: "Partner",
+      title: "Empresa",
       links: [
         {
-          name: "Our Partner",
+          name: "Sobre nós",
           link: "https://www.hoobank.com/our-partner/",
         },
         {
-          name: "Become a Partner",
+          name: "Contato",
           link: "https://www.hoobank.com/become-a-partner/",
         },
       ],
@@ -181,36 +161,11 @@ import {
       link: "https://www.facebook.com/",
     },
     {
-      id: "social-media-3",
-      icon: twitter,
-      link: "https://www.twitter.com/",
-    },
-    {
       id: "social-media-4",
       icon: linkedin,
       link: "https://www.linkedin.com/",
     },
   ];
   
-  export const clients = [
-    {
-      id: "client-1",
-      logo: airbnb,
-      bgImg: "../assets/airbnb-small.png"
-    },
-    {
-      id: "client-2",
-      logo: binance,
-      bgImg: "../assets/binance-small.png"
-    },
-    {
-      id: "client-3",
-      logo: coinbase,
-      bgImg: "../assets/binance-small.png"
-    },
-    {
-      id: "client-4",
-      logo: dropbox,
-      bgImg: "../assets/dropbox-small.png"
-    },
-  ];
+  export const clients = [];
+  

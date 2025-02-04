@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Billing = () => (
-  <section id="product" className="sectionReverse">
+  <section id="Produto" className="sectionReverse">
     <motion.div
       className="sectionImgReverse"
       variants={slideIn("left", "tween", 0.2, 1.5)}
@@ -38,8 +38,8 @@ const Billing = () => (
       Acompanhamento <br className="sm:block hidden" /> Direto pelo WhatsApp
       </h2>
       <p className="paragraph max-w-[470px] mt-5">
-      Tenha acesso à mentoria e ao acompanhamento do seu assessor diretamente pelo WhatsApp.
-      Receba orientações, tire suas dúvidas e acompanhe suas oportunidades de investimento em tempo real,tudo no app que você já usa no dia a dia. Mais praticidade, sem complicações – é só enviar uma mensagem e a inteligência do Solomon está à sua disposição.
+      Tenha acesso à mentoria e ao acompanhamento do seu assessor diretamente pelo WhatsApp. 
+      Registre seus ativos na plataforma, acompanhe tudo em tempo real e receba atualizações personalizadas do Solomon. Receba orientações, tire suas dúvidas e visualize suas oportunidades de investimento tanto na plataforma quanto no app que você já usa no dia a dia. Mais praticidade, sem complicações – é só enviar uma mensagem e a inteligência do Solomon está à sua disposição.
       </p>
 
       <div className="flex flex-row flex-wrap sm:mt-10 mt-6">
