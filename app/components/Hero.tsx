@@ -37,7 +37,7 @@ const Hero = () => {
           com Solomon.
         </h1>
         <p className="paragraph max-w-[470px] mt-5">
-        O primeiro Assessor de nvestimentos com Inteligência Artificial, feito para você – seja um investidor experiente ou alguém que está começando agora.
+        O primeiro Assessor de Investimentos com Inteligência Artificial, feito para você – seja um investidor experiente ou alguém que está começando agora.
         Tenha o poder da IA junto com uma consultoria personalizada e acessível, projetada para impulsionar seus resultados com segurança e praticidade.
         </p>
       </motion.div>
