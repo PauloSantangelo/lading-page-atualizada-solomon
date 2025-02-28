@@ -130,7 +130,7 @@ import {
         },
         {
           name: "Instagram",
-          link: "https://www.hoobank.com/partners/",
+          link: "https://www.instagram.com/solomon.finance/",
         },
       ],
     },
@@ -153,7 +153,7 @@ import {
     {
       id: "social-media-1",
       icon: instagram,
-      link: "https://www.instagram.com/",
+      link: "https://www.instagram.com/solomon.finance/",
     },
     {
       id: "social-media-2",
