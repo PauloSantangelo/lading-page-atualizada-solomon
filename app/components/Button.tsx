@@ -4,9 +4,9 @@ const Button = ({ styles }: { styles: string }) => (
   <a href="https://app.solomonchat.com/" target="_blank" rel="noopener noreferrer">
     <button
       type="button"
-      className={`py-4 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none ${styles}`}
+      className={`py-5 px-8 font-poppins font-semibold text-[20px] text-primary bg-blue-gradient rounded-[12px] outline-none ${styles}`}
     >
-      Comece aqui
+      Teste agora a IA nos seus investimentos!
     </button>
   </a>
 );
