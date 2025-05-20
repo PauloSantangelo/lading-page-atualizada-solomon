@@ -1,11 +1,16 @@
 import { clients } from "../constants";
 import Image from "next/image";
 
+type Client = {
+  id: string;
+  logo: string;
+};
+
 const Clients = () => {
   return (
     <section className="flexCenter my-4">
       <div className="flexCenter flex-wrap w-full">
-        {clients.map((client) => (
+        {(clients as Client[]).map((client) => (
           <div
             key={client.id}
             className="flex-1 flexCenter sm:min-w-[192px] min-w-[120px]"
