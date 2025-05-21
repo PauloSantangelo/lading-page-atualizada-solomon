@@ -9,7 +9,7 @@ interface feedbackCardPropTypes {
   name: string;
   title: string;
   img: string | StaticImageData;
-  highlight?: boolean; // ✅ Novo prop opcional
+  highlight?: boolean;
 }
 
 const FeedBackCard = ({
@@ -17,12 +17,13 @@ const FeedBackCard = ({
   name,
   title,
   img,
-  highlight = false,
 }: feedbackCardPropTypes) => (
   <motion.div
-    className={`flex justify-between flex-col px-10 py-12 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5 feedback-card ${
-      highlight ? "bg-[#2c2c32]" : "bg-transparent"
-    }`}
+    className={`
+      flex justify-between flex-col px-10 py-12 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5
+      bg-[#111827] hover:bg-[#1a1a1f] transition-colors duration-300
+      hover:border hover:border-cyan-500
+    `}
     variants={zoomIn}
     initial="hidden"
     whileInView="show"
@@ -34,7 +35,7 @@ const FeedBackCard = ({
       width={42}
       height={27}
       className="object-contain"
-      priority={true}
+      loading="lazy"
     />
     <p className="font-poppins font-normal text-[18px] leading-[32px] text-white my-10">
       {content}
@@ -46,7 +47,7 @@ const FeedBackCard = ({
         width={48}
         height={48}
         className="rounded-full object-contain"
-        priority={true}
+        loading="lazy"
       />
       <div className="flex flex-col ml-4">
         <h1 className="font-poppins font-semibold text-[20px] leading-[32px] text-white">

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FiArrowRightCircle } from 'react-icons/fi';
 import { slideIn } from '../styles/animations';
-import { discount, teste } from '../../public';
+import teste from '../../public/teste.webp';
 
 const prints = [
   { src: '/print1.webp', delay: 0 },
@@ -15,15 +15,14 @@ const prints = [
 const Hero = () => {
   return (
     <section id="home" className="relative w-full flex md:flex-row flex-col md:gap-6 paddingY overflow-hidden">
-      
       {/* 💻 Prints desktop: atrás do robô */}
       <div className="hidden md:block absolute w-full h-full z-0 pointer-events-none">
         {prints.map((print, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.6 }}
+            initial={{ opacity: 0, scale: 0.7 }}
             animate={{
-              opacity: 0.35,
+              opacity: 0.3,
               scale: 1,
               y: [0, -6, 0],
             }}
@@ -34,7 +33,7 @@ const Hero = () => {
               repeatType: 'loop',
               ease: 'easeInOut',
             }}
-            className="absolute"
+            className="absolute rounded-xl overflow-hidden border border-white"
             style={{
               top: `${10 + index * 20}%`,
               left: `${55 + index * 5}%`,
@@ -43,16 +42,18 @@ const Hero = () => {
               zIndex: 1,
             }}
           >
-            <img
+            <Image
               src={print.src}
               alt={`print-${index}`}
-              className="rounded-xl border border-white object-cover w-full h-full"
+              fill
+              className="object-cover"
+              loading="lazy"
             />
           </motion.div>
         ))}
       </div>
 
-      {/* 🧠 Texto + botão desktop */}
+      {/* Texto principal */}
       <motion.div
         className="flex-1 z-30 flexStart flex-col xl:px-0 paddingX"
         variants={slideIn('left', 'tween', 0.2, 1.5)}
@@ -61,7 +62,6 @@ const Hero = () => {
         viewport={{ once: true }}
       >
         <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
-          <Image src={discount} alt="discount" width={20} height={20} priority />
           <p className="paragraph ml-2 text-[11px] md:text-base leading-tight">
             <span className="text-white font-semibold">Solomon</span> o 1° Assessor de Investimentos <span className="text-white">com IA</span> do Brasil. 🏆
           </p>
@@ -93,7 +93,7 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      {/* 🤖 Robô com prints mobile atrás (layout moderno) */}
+      {/* Robô com prints mobile */}
       <motion.div
         className="flex-1 flexCenter md:my-0 my-10 relative z-20 w-full"
         variants={slideIn('right', 'tween', 0.2, 1.5)}
@@ -101,7 +101,7 @@ const Hero = () => {
         whileInView="show"
         viewport={{ once: true }}
       >
-        {/* 📱 Prints mobile posicionados livremente atrás do robô */}
+        {/* Prints mobile */}
         <div className="absolute inset-0 md:hidden z-0 pointer-events-none">
           {prints.map((print, index) => {
             const positions = [
@@ -109,13 +109,12 @@ const Hero = () => {
               { top: '35%', right: '5%' },
               { bottom: '10%', left: '20%' },
             ];
-
             return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.7 }}
                 animate={{
-                  opacity: 0.35,
+                  opacity: 0.3,
                   scale: 1,
                   y: [0, -4, 0],
                 }}
@@ -126,13 +125,15 @@ const Hero = () => {
                   repeatType: 'loop',
                   ease: 'easeInOut',
                 }}
-                className="absolute w-[130px] h-[130px]"
+                className="absolute w-[130px] h-[130px] rounded-xl overflow-hidden border border-white"
                 style={positions[index]}
               >
-                <img
+                <Image
                   src={print.src}
                   alt={`print-${index}`}
-                  className="rounded-xl border border-white object-cover w-full h-full"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
                 />
               </motion.div>
             );
@@ -142,10 +143,9 @@ const Hero = () => {
         <Image
           src={teste}
           alt="robo"
-          layout="responsive"
           width={500}
           height={500}
-          className="w-full sm:w-[100%] sm:h-auto h-auto relative z-[5]"
+          className="relative z-[5] w-full sm:w-[100%] h-auto"
           priority
           quality={100}
         />
@@ -156,7 +156,7 @@ const Hero = () => {
         <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
       </motion.div>
 
-      {/* 📱 Botão flutuante mobile */}
+      {/* Botão flutuante mobile */}
       <a
         href="https://wa.me/5511988130629"
         target="_blank"

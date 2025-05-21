@@ -13,13 +13,16 @@ const Billing = () => (
       whileInView="show"
       viewport={{ once: true }}
     >
-      <Image
-        src={bill}
-        alt="billing"
-        width={0}
-        height={0}
-        className="w-[100%] h-[100%] relative z-[5]"
-      />
+      <div className="relative w-full h-full z-[5]">
+        <Image
+          src={bill}
+          alt="billing"
+          fill
+          className="object-contain"
+          quality={70}
+          priority={false}
+        />
+      </div>
 
       {/* gradient start */}
       <div className="absolute z-[3] -left-1/2 top-0 w-[50%] h-[50%] rounded-full white__gradient" />
@@ -35,11 +38,13 @@ const Billing = () => (
       viewport={{ once: true }}
     >
       <h2 className="heading2">
-      Acompanhamento <br className="sm:block hidden" /> Direto pelo WhatsApp
+        Acompanhamento <br className="sm:block hidden" /> Direto pelo WhatsApp
       </h2>
       <p className="paragraph max-w-[470px] mt-5">
-      Tenha acesso à mentoria e ao acompanhamento do seu assessor diretamente pelo WhatsApp. 
-      Registre seus ativos na plataforma, acompanhe tudo em tempo real e receba atualizações personalizadas do Solomon. Receba orientações, tire suas dúvidas e visualize suas oportunidades de investimento tanto na plataforma quanto no app que você já usa no dia a dia. Mais praticidade, sem complicações – é só enviar uma mensagem e a inteligência do Solomon está à sua disposição.
+        Tenha acesso à mentoria e ao acompanhamento do seu assessor diretamente pelo WhatsApp. 
+        Registre seus ativos na plataforma, acompanhe tudo em tempo real e receba atualizações personalizadas do Solomon. 
+        Receba orientações, tire suas dúvidas e visualize suas oportunidades de investimento tanto na plataforma quanto no app que você já usa no dia a dia. 
+        Mais praticidade, sem complicações – é só enviar uma mensagem e a inteligência do Solomon está à sua disposição.
       </p>
     </motion.div>
   </section>

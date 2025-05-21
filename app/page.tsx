@@ -1,14 +1,18 @@
-import {
-  Navbar,
-  Hero,
-  Billing,
-  Business,
-  Clients,
-  CardDeal,
-  Testimonials,
-  CTA,
-  Footer,
-} from "./components";
+'use client';
+
+import dynamic from 'next/dynamic';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+
+// Lazy imports (melhor para performance)
+const Business = dynamic(() => import('./components/Business'));
+const Testimonials = dynamic(() => import('./components/Testimonials'));
+const Clients = dynamic(() => import('./components/Clients'));
+const Billing = dynamic(() => import('./components/Billing'));
+const PricingPlans = dynamic(() => import('./components/PricingPlans'));
+const CardDeal = dynamic(() => import('./components/CardDeal'));
+const CTA = dynamic(() => import('./components/CTA'));
+const Footer = dynamic(() => import('./components/Footer'));
 
 export default function Home() {
   return (
@@ -20,24 +24,22 @@ export default function Home() {
       </header>
 
       <section className="bg-primary flexStart">
-        <section className="boxWidth">
+        <div className="boxWidth">
           <Hero />
-        </section>
+        </div>
       </section>
 
       <section className="bg-primary paddingX flexStart">
-        <section className="boxWidth">
+        <div className="boxWidth">
           <Business />
-          
-          {/* ✅ Depoimentos aparecem logo após os benefícios */}
           <Testimonials />
-
           <Clients />
           <Billing />
+          <PricingPlans />
           <CardDeal />
           <CTA />
           <Footer />
-        </section>
+        </div>
       </section>
     </main>
   );

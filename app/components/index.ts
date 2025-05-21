@@ -7,6 +7,7 @@ import CTA from "./CTA";
 import Footer from "./Footer";
 import Testimonials from "./Testimonials";
 import Hero from "./Hero";
+import PricingPlans from "./PricingPlans";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   Footer,
   Testimonials,
   Hero,
+  PricingPlans, // ✅ adicionado aqui
 };
