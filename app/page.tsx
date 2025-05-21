@@ -1,7 +1,6 @@
 import {
   Navbar,
   Hero,
-  Stats,
   Billing,
   Business,
   CardDeal,
@@ -26,7 +25,7 @@ export default function Home() {
       </section>
       <section className=" bg-primary paddingX flexStart">
         <section className="boxWidth">
-          <Stats />
+        
           <Business />
           <Billing />
           <CardDeal />
