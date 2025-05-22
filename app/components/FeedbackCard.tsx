@@ -20,7 +20,7 @@ const FeedBackCard = ({
 }: feedbackCardPropTypes) => (
   <motion.div
     className={`
-      flex justify-between flex-col px-10 py-12 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5
+      flex justify-between flex-col px-10 py-8 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5
       bg-[#111827] hover:bg-[#1a1a1f] transition-colors duration-300
       hover:border hover:border-cyan-500
     `}
@@ -32,12 +32,12 @@ const FeedBackCard = ({
     <Image
       src={quotes}
       alt="quotes"
-      width={42}
-      height={27}
+      width={28}
+      height={18}
       className="object-contain"
       loading="lazy"
     />
-    <p className="font-poppins font-normal text-[18px] leading-[32px] text-white my-10">
+    <p className="font-poppins font-normal text-[18px] leading-[32px] text-white my-6">
       {content}
     </p>
     <div className="flex">

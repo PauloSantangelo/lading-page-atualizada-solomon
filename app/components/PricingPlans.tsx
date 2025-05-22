@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import logo from "../../public/logo.webp";
+
 const PricingPlans = () => {
   return (
     <section
@@ -8,6 +11,11 @@ const PricingPlans = () => {
     >
       {/* Fundo animado sutil */}
       <div className="absolute inset-0 z-0 pointer-events-none animate-[pulseGrid_20s_linear_infinite] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/10 via-blue-800/10 to-transparent blur-2xl" />
+
+      {/* Logo fixo no canto inferior */}
+      <div className="absolute bottom-5 right-5 z-10 opacity-70 hover:opacity-70 transition-opacity duration-300">
+        <Image src={logo} alt="Logo Solomon" width={200} height={52} priority />
+      </div>
 
       <div className="max-w-7xl mx-auto text-center mb-14 relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold mb-4">
@@ -28,9 +36,14 @@ const PricingPlans = () => {
             <li>✅ Sem compromisso</li>
             <li>✅ Pague apenas quando usar</li>
           </ul>
-          <button className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a]">
+          <a
+            href="https://www.asaas.com/c/3u0bbc6tdgprm8hp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a]"
+          >
             Escolher Mensal
-          </button>
+          </a>
         </article>
 
         {/* Plano Semestral */}
@@ -46,9 +59,14 @@ const PricingPlans = () => {
             <li>✅ Acesso completo por 6 meses</li>
             <li>✅ Insights e análises exclusivas</li>
           </ul>
-          <button className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a] z-10">
+          <a
+            href="https://www.asaas.com/c/qspw52fq2ekfg199"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a] z-10"
+          >
             Escolher Semestral
-          </button>
+          </a>
         </article>
 
         {/* Plano Anual */}
@@ -63,9 +81,14 @@ const PricingPlans = () => {
             <li>✅ Acesso contínuo por 1 ano</li>
             <li>✅ Assistente 100% personalizado</li>
           </ul>
-          <button className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a]">
+          <a
+            href="https://www.asaas.com/c/s71c698qgip5npsd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a]"
+          >
             Escolher Anual
-          </button>
+          </a>
         </article>
       </div>
     </section>

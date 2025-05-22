@@ -80,13 +80,13 @@ const Hero = () => {
 
         <div className="hidden md:inline-block mt-10">
           <a
-            href="https://wa.me/5511988130629"
+            href="https://wa.me/5511988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-300 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-cyan-500/60"
           >
             <span className="flex items-center gap-2 font-poppins font-semibold text-white text-sm md:text-base z-10">
-              🚀 Testar a IA (Grátis)
+              🚀 Teste a IA (Grátis)
               <FiArrowRightCircle className="text-white text-xl group-hover:translate-x-1 transition-transform" />
             </span>
           </a>
@@ -158,7 +158,7 @@ const Hero = () => {
 
       {/* Botão flutuante mobile */}
       <a
-        href="https://wa.me/5511988130629"
+        href="https://wa.me/5511988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
         target="_blank"
         rel="noopener noreferrer"
         className="md:hidden fixed bottom-5 right-5 z-50 animate-wiggle group inline-flex items-center justify-center px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-300 hover:to-blue-500 shadow-md"
