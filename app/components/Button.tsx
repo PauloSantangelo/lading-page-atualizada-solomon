@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = ({ styles }: { styles: string }) => (
   <a
-    href="https://wa.me/5511988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
+    href="https://wa.me/5514988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
     target="_blank"
     rel="noopener noreferrer"
   >

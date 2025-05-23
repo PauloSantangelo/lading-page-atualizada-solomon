@@ -44,7 +44,7 @@ const Navbar = () => {
 
         {/* Botão extra */}
         <a
-          href="https://wa.me/5511988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
+          href="https://wa.me/5514988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-300 hover:to-blue-500 text-white font-medium px-5 py-2 rounded-full text-sm shadow-md transition-all duration-300"
@@ -84,7 +84,7 @@ const Navbar = () => {
               ))}
               <li>
                 <a
-                  href="https://wa.me/5511988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
+                  href="https://wa.me/5514988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white text-sm bg-gradient-to-r from-cyan-400 to-blue-600 px-4 py-2 rounded-full block text-center"
