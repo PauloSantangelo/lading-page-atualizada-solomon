@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { zoomIn } from "../styles/animations";
 import { quotes } from "../../public";
@@ -20,9 +19,9 @@ const FeedBackCard = ({
 }: feedbackCardPropTypes) => (
   <motion.div
     className={`
-      flex justify-between flex-col px-10 py-8 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5
-      bg-[#111827] hover:bg-[#1a1a1f] transition-colors duration-300
-      hover:border hover:border-cyan-500
+      group flex justify-between flex-col px-10 py-8 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5
+      bg-[#111827] transition-colors duration-300
+      border border-transparent hover:border-cyan-500
     `}
     variants={zoomIn}
     initial="hidden"
@@ -37,7 +36,7 @@ const FeedBackCard = ({
       className="object-contain"
       loading="lazy"
     />
-    <p className="font-poppins font-normal text-[18px] leading-[32px] text-white my-6">
+    <p className="font-poppins font-normal text-base leading-relaxed text-white my-6">
       {content}
     </p>
     <div className="flex">
@@ -50,10 +49,10 @@ const FeedBackCard = ({
         loading="lazy"
       />
       <div className="flex flex-col ml-4">
-        <h1 className="font-poppins font-semibold text-[20px] leading-[32px] text-white">
+        <h1 className="font-poppins font-semibold text-lg leading-snug text-white">
           {name}
         </h1>
-        <p className="font-poppins font-normal text-[16px] leading-[24px] text-dimWhite">
+        <p className="font-poppins font-normal text-sm leading-[20px] text-dimWhite">
           {title}
         </p>
       </div>
