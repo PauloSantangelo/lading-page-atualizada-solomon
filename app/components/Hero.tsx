@@ -46,17 +46,17 @@ const Hero = () => {
         viewport={{ once: true }}
       >
         <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
-          <p className="paragraph ml-2 text-[11px] md:text-base leading-tight">
+          <p className="paragraph ml-2 text-[10px] md:text-base leading-tight">
             <span className="text-white font-semibold">Solomon</span> • 1° Assessor de Investimentos <span className="text-white font-semibold">com IA</span> no Brasil.
           </p>
         </div>
 
-        <h1 className="font-poppins font-bold text-[28px] ss:text-[40px] md:text-[58px] text-white leading-tight md:leading-[72px]">
+        <h1 className="font-poppins font-bold text-[22px] ss:text-[30px] md:text-[58px] text-white leading-tight md:leading-[72px] max-w-[95%]">
           Invista com <span className="text-gradient">inteligência artificial</span><br />
           de forma <span className="text-gradient">fácil, segura e eficiente.</span>
         </h1>
 
-        <p className="paragraph max-w-[480px] mt-6 text-white/90">
+        <p className="paragraph text-white/90 mt-4 text-sm md:text-base leading-tight md:leading-[24px] max-w-[95%] md:max-w-[480px]">
           A consultoria de investimentos do futuro. Tenha análises atualizadas, sugestões personalizadas e acompanhamento direto via WhatsApp — tudo isso com a precisão da IA.
         </p>
 

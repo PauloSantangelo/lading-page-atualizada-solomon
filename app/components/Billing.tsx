@@ -38,10 +38,11 @@ const Billing = () => (
       whileInView="show"
       viewport={{ once: true }}
     >
-      <h2 className="heading2">
+      <h2 className="font-poppins font-bold text-white text-[22px] sm:text-[32px] md:text-[40px] leading-tight md:leading-[56px]">
         Acompanhamento <br className="sm:block hidden" /> Direto pelo WhatsApp
       </h2>
-      <p className="paragraph max-w-[470px] mt-5">
+
+      <p className="text-sm md:text-base leading-tight md:leading-[26px] text-white/90 mt-5 max-w-[95%] md:max-w-[470px]">
         Tenha acesso à mentoria e ao acompanhamento do seu assessor diretamente pelo WhatsApp. 
         Registre seus ativos na plataforma, acompanhe tudo em tempo real e receba atualizações personalizadas do Solomon. 
         Receba orientações, tire suas dúvidas e visualize suas oportunidades de investimento tanto na plataforma quanto no app que você já usa no dia a dia. 
@@ -53,9 +54,9 @@ const Billing = () => (
           href="https://wa.me/SEUNUMERO"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 text-[#0f172a] text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-8 py-4 rounded-xl shadow-xl"
+          className="inline-flex items-center gap-3 text-[#0f172a] text-sm md:text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
         >
-          <BrainCircuit className="w-6 h-6" />
+          <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
           Comece a investir com IA
         </a>
       </div>

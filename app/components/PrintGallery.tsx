@@ -63,15 +63,15 @@ const PrintGallery = () => {
           })}
         </div>
 
-        {/* Botão de CTA */}
+        {/* Botão de CTA responsivo */}
         <div className="flex justify-center">
           <a
             href="https://wa.me/SEUNUMERO"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-[#0f172a] text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-8 py-4 rounded-xl shadow-xl"
+            className="inline-flex items-center gap-2 md:gap-3 text-[#0f172a] text-base md:text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
           >
-            <BrainCircuit className="w-6 h-6" />
+            <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
             Comece a investir com IA
           </a>
         </div>

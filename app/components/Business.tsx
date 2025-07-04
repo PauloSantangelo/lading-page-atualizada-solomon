@@ -29,10 +29,10 @@ const FeatureCard = ({ icon, title, content, index }: featureCardProps) => (
       />
     </div>
     <div className="flex-1 flex flex-col ml-3">
-      <h1 className="font-poppins font-semibold text-white text-[18px] leading-[23px] mb-1">
+      <h1 className="font-poppins font-semibold text-white text-[16px] md:text-[18px] leading-[22px] mb-1">
         {title}
       </h1>
-      <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[24px] mb-1">
+      <p className="font-poppins font-normal text-dimWhite text-[14px] md:text-[16px] leading-[22px]">
         {content}
       </p>
     </div>
@@ -48,28 +48,29 @@ const Business = () => (
       whileInView="show"
       viewport={{ once: true }}
     >
-      <h2 className="heading2">
+      <h2 className="font-poppins font-bold text-white text-[22px] sm:text-[32px] md:text-[40px] leading-tight md:leading-[56px]">
         Inteligência artificial para <span className="text-gradient">investidores de verdade</span><br className="sm:block hidden" />
         com dados atualizados e acesso em tempo real.
       </h2>
-      <p className="paragraph max-w-[480px] mt-5 text-white/90">
+
+      <p className="paragraph text-sm md:text-base leading-tight md:leading-[26px] text-white/90 max-w-[95%] md:max-w-[480px] mt-5">
         Receba as principais notícias da semana com base no seu perfil de interesse, acesse dados atualizados como dólar, bitcoin e indicadores de ações, e filtre carteiras públicas de grandes instituições caso deseje comparar estratégias. Tudo de forma prática, rápida e inteligente.
       </p>
 
-      <div className="mt-10">
+      <div className="mt-8">
         <a
           href="https://wa.me/SEUNUMERO"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 text-[#0f172a] text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-8 py-4 rounded-xl shadow-xl"
+          className="inline-flex items-center gap-3 text-[#0f172a] text-sm md:text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
         >
-          <BrainCircuit className="w-6 h-6" />
+          <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
           Comece a investir com IA
         </a>
       </div>
     </motion.div>
 
-    <div className="sectionImg flex-col">
+    <div className="sectionImg flex-col mt-10 md:mt-0">
       {Sobre.map((feature, index) => (
         <motion.div
           key={feature.id}

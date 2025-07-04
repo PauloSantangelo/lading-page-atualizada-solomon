@@ -18,7 +18,6 @@ const CardDeal = () => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % prints.length);
     }, 3000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -32,31 +31,31 @@ const CardDeal = () => {
         whileInView="show"
         viewport={{ once: true }}
       >
-        <h2 className="heading2">
+        <h2 className="font-poppins font-bold text-white text-[24px] sm:text-[36px] md:text-[42px] leading-tight md:leading-[56px]">
           O Solomon potencializa seus <br className="sm:block hidden" /> resultados em investimentos
         </h2>
-        <p className="paragraph max-w-[470px] mt-5">
+
+        <p className="text-sm md:text-base leading-tight md:leading-[26px] text-white/90 mt-5 max-w-[95%] md:max-w-[470px]">
           Solomon é mais que um assistente: ele entende seu perfil, acompanha seus investimentos e entrega dados
           atualizados do mercado — incluindo ativos em alta, oportunidades e análises. Com inteligência artificial,
           ele filtra notícias relevantes, explica o que importa e orienta até quem está começando. Tudo em uma
           plataforma prática, acessível e segura.
         </p>
 
-        {/* Botão customizado */}
         <div className="mt-10">
           <a
             href="https://wa.me/SEUNUMERO"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-[#0f172a] text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-8 py-4 rounded-xl shadow-xl"
+            className="inline-flex items-center gap-3 text-[#0f172a] text-sm md:text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
           >
-            <BrainCircuit className="w-6 h-6" />
+            <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
             Comece a investir com IA
           </a>
         </div>
       </motion.div>
 
-      {/* Imagem do produto + print com animação */}
+      {/* Imagem + print animado */}
       <motion.div
         className="sectionImg relative"
         variants={slideIn("right", "tween", 0.2, 1.5)}
@@ -73,14 +72,12 @@ const CardDeal = () => {
           priority
         />
 
-        {/* Print com animação e responsividade */}
         <motion.div
           key={current}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="absolute top-[16%] right-[6%] rounded-xl overflow-hidden border border-white shadow-lg
-                     w-[160px] sm:w-[300px] h-auto"
+          className="absolute top-[16%] right-[6%] rounded-xl overflow-hidden border border-white shadow-lg w-[160px] sm:w-[220px] md:w-[300px] h-auto"
         >
           <Image
             src={prints[current]}
