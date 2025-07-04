@@ -1,9 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { slideIn } from "../styles/animations";
-import Button from "./Button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { BrainCircuit } from "lucide-react";
 
 import teste3 from "../../public/teste3.webp";
 import print1 from "../../public/print1.webp";
@@ -41,7 +41,19 @@ const CardDeal = () => {
           ele filtra notícias relevantes, explica o que importa e orienta até quem está começando. Tudo em uma
           plataforma prática, acessível e segura.
         </p>
-        <Button styles="mt-10" />
+
+        {/* Botão customizado */}
+        <div className="mt-10">
+          <a
+            href="https://wa.me/SEUNUMERO"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-[#0f172a] text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-8 py-4 rounded-xl shadow-xl"
+          >
+            <BrainCircuit className="w-6 h-6" />
+            Comece a investir com IA
+          </a>
+        </div>
       </motion.div>
 
       {/* Imagem do produto + print com animação */}

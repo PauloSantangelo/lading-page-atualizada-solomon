@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import logo from "../../public/logo.webp";
+import Image from 'next/image';
+import logo from '../../public/logo.webp';
 
 const PricingPlans = () => {
   return (
@@ -26,30 +26,11 @@ const PricingPlans = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto relative z-10">
-        {/* Plano Mensal */}
-        <article className="bg-[#1e293b] rounded-xl p-8 shadow-lg flex flex-col items-start hover:scale-105 transition-transform duration-300">
-          <h3 className="text-xl font-semibold mb-2">Plano Mensal</h3>
-          <p className="text-3xl font-bold mb-4">R$ 59,90</p>
-          <ul className="text-sm text-dimWhite mb-6 space-y-2">
-            <li>✅ Benefícios completos</li>
-            <li>✅ Sem compromisso</li>
-            <li>✅ Pague apenas quando usar</li>
-          </ul>
-          <a
-            href="https://www.asaas.com/c/3u0bbc6tdgprm8hp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a]"
-          >
-            Escolher Mensal
-          </a>
-        </article>
-
-        {/* Plano Semestral */}
-        <article className="relative bg-[#1e293b] border-2 border-cyan-500 rounded-xl p-8 shadow-lg flex flex-col items-start overflow-hidden hover:scale-105 transition-transform duration-300">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto relative z-10">
+        {/* Plano Semestral (Chamado de Mensal) */}
+        <article className="bg-[#1e293b] rounded-xl p-8 shadow-lg flex flex-col items-start hover:scale-105 transition-transform duration-300 border-2 border-cyan-500 relative overflow-hidden">
           <div className="absolute inset-0 rounded-xl border-2 border-cyan-400 opacity-10 blur-md animate-spin-slow" />
-          <h3 className="text-xl font-semibold mb-2 z-10">Plano Semestral</h3>
+          <h3 className="text-xl font-semibold mb-2 z-10">Plano Mensal</h3>
           <p className="text-3xl font-bold mb-1 z-10">R$ 39,90/mês</p>
           <p className="text-sm italic text-cyan-400 mb-4 z-10">
             Ideal para quem quer constância sem abrir mão da economia
@@ -65,7 +46,7 @@ const PricingPlans = () => {
             rel="noopener noreferrer"
             className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a] z-10"
           >
-            Escolher Semestral
+            Escolher Mensal
           </a>
         </article>
 

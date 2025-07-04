@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import Testimonials from "./Testimonials";
 import Hero from "./Hero";
 import PricingPlans from "./PricingPlans";
+import PrintGallery from "./PrintGallery"; // ✅ adicionado aqui
 
 export {
   Navbar,
@@ -19,5 +20,6 @@ export {
   Footer,
   Testimonials,
   Hero,
-  PricingPlans, // ✅ adicionado aqui
+  PricingPlans,
+  PrintGallery, // ✅ exportado
 };

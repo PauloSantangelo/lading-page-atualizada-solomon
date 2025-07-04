@@ -13,6 +13,7 @@ const PricingPlans = dynamic(() => import('./components/PricingPlans'));
 const CardDeal = dynamic(() => import('./components/CardDeal'));
 const CTA = dynamic(() => import('./components/CTA'));
 const Footer = dynamic(() => import('./components/Footer'));
+const PrintGallery = dynamic(() => import('./components/PrintGallery'));
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <div className="boxWidth">
           <Business />
           <Testimonials />
+          <PrintGallery />
           <Clients />
           <Billing />
           <PricingPlans />

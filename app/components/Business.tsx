@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn } from "../styles/animations";
 import { Sobre } from "../constants";
-import Button from "./Button";
+import { BrainCircuit } from "lucide-react";
 
 interface featureCardProps {
   icon: string;
@@ -49,14 +49,24 @@ const Business = () => (
       viewport={{ once: true }}
     >
       <h2 className="heading2">
-      Sua Assessoria de Investimentos com IA:<br className="sm:block hidden" /> Confiável, Atualizada e 100% Personalizada,
+        Inteligência artificial para <span className="text-gradient">investidores de verdade</span><br className="sm:block hidden" />
+        com dados atualizados e acesso em tempo real.
       </h2>
-      <p className="paragraph max-w-[470px] mt-5">
-      Tenha acesso a recomendações personalizadas, confiáveis e sempre atualizadas. 
-      Tudo que você precisa para investir com segurança, de forma simplificada.
+      <p className="paragraph max-w-[480px] mt-5 text-white/90">
+        Receba as principais notícias da semana com base no seu perfil de interesse, acesse dados atualizados como dólar, bitcoin e indicadores de ações, e filtre carteiras públicas de grandes instituições caso deseje comparar estratégias. Tudo de forma prática, rápida e inteligente.
       </p>
 
-      <Button styles={`mt-10`} />
+      <div className="mt-10">
+        <a
+          href="https://wa.me/SEUNUMERO"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 text-[#0f172a] text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-8 py-4 rounded-xl shadow-xl"
+        >
+          <BrainCircuit className="w-6 h-6" />
+          Comece a investir com IA
+        </a>
+      </div>
     </motion.div>
 
     <div className="sectionImg flex-col">

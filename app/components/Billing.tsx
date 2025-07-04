@@ -3,6 +3,7 @@ import { bill } from "../../public";
 import { slideIn } from "../styles/animations";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { BrainCircuit } from "lucide-react";
 
 const Billing = () => (
   <section id="Produto" className="sectionReverse">
@@ -46,6 +47,18 @@ const Billing = () => (
         Receba orientações, tire suas dúvidas e visualize suas oportunidades de investimento tanto na plataforma quanto no app que você já usa no dia a dia. 
         Mais praticidade, sem complicações – é só enviar uma mensagem e a inteligência do Solomon está à sua disposição.
       </p>
+
+      <div className="mt-8">
+        <a
+          href="https://wa.me/SEUNUMERO"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 text-[#0f172a] text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-8 py-4 rounded-xl shadow-xl"
+        >
+          <BrainCircuit className="w-6 h-6" />
+          Comece a investir com IA
+        </a>
+      </div>
     </motion.div>
   </section>
 );

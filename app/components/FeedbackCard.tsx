@@ -1,27 +1,28 @@
-import { motion } from "framer-motion";
-import { zoomIn } from "../styles/animations";
-import { quotes } from "../../public";
-import Image, { StaticImageData } from "next/image";
+'use client';
+
+import { motion } from 'framer-motion';
+import { zoomIn } from '../styles/animations';
+import { quotes } from '../../public';
+import Image from 'next/image';
 
 interface feedbackCardPropTypes {
   content: string;
   name: string;
   title: string;
-  img: string | StaticImageData;
-  highlight?: boolean;
+  highlight?: boolean; // ✅ Adicionado aqui
 }
 
-const FeedBackCard = ({
+const FeedbackCard = ({
   content,
   name,
   title,
-  img,
+  highlight = false, // ✅ valor padrão
 }: feedbackCardPropTypes) => (
   <motion.div
     className={`
-      group flex justify-between flex-col px-10 py-8 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5
-      bg-[#111827] transition-colors duration-300
-      border border-transparent hover:border-cyan-500
+      group flex flex-col justify-between px-6 py-6 rounded-[20px] w-full max-w-[370px]
+      transition-colors duration-300 border border-transparent
+      ${highlight ? 'bg-[#1f2937] border-cyan-500 scale-[1.03]' : 'bg-[#111827] hover:border-cyan-500'}
     `}
     variants={zoomIn}
     initial="hidden"
@@ -33,31 +34,21 @@ const FeedBackCard = ({
       alt="quotes"
       width={28}
       height={18}
-      className="object-contain"
+      className="object-contain mb-4"
       loading="lazy"
     />
-    <p className="font-poppins font-normal text-base leading-relaxed text-white my-6">
+    <p className="font-poppins font-normal text-base leading-relaxed text-white mb-6">
       {content}
     </p>
-    <div className="flex">
-      <Image
-        src={img}
-        alt={name}
-        width={48}
-        height={48}
-        className="rounded-full object-contain"
-        loading="lazy"
-      />
-      <div className="flex flex-col ml-4">
-        <h1 className="font-poppins font-semibold text-lg leading-snug text-white">
-          {name}
-        </h1>
-        <p className="font-poppins font-normal text-sm leading-[20px] text-dimWhite">
-          {title}
-        </p>
-      </div>
+    <div className="mt-auto">
+      <h1 className="font-poppins font-semibold text-lg leading-snug text-white">
+        {name}
+      </h1>
+      <p className="font-poppins font-normal text-sm leading-[20px] text-dimWhite">
+        {title}
+      </p>
     </div>
   </motion.div>
 );
 
-export default FeedBackCard;
+export default FeedbackCard;

@@ -1,7 +1,4 @@
 import {
-  people01,
-  people02,
-  people03,
   instagram,
   send,
   shield,
@@ -33,21 +30,21 @@ export const Sobre = [
     icon: star,
     title: "Benefícios",
     content:
-      "Com tecnologia de ponta, nossa plataforma analisa o mercado em tempo real, fundamentando cada decisão e adaptando-a ao seu perfil. Simplifique seu investimento com insights confiáveis, mantendo você no controle e seguro para alcançar seus objetivos financeiros.",
+      "Acompanhe indicadores, notícias e tendências de mercado em tempo real. O Solomon te mantém atualizado com base no seu perfil de interesse, para decisões mais rápidas e seguras.",
   },
   {
     id: "feature-2",
     icon: shield,
     title: "100% Seguro",
     content:
-      "Nossa tecnologia nunca acessa sua conta bancária ou dados sensíveis. Classificamos seu perfil com base em uma memória robusta e treinada, oferecendo recomendações precisas. Cada orientação é projetada para garantir que você invista com total privacidade e segurança.",
+      "Não acessamos contas bancárias nem dados sensíveis. Sua privacidade é prioridade, com segurança reforçada e inteligência artificial treinada para proteger cada etapa do seu uso.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Rentabilidade",
+    title: "Resultados com Clareza",
     content:
-      "Com o Solomon, você acompanha de perto o desempenho dos seus investimentos e recebe insights personalizados para maximizar sua rentabilidade. Tenha a confiança de estar sempre informado e melhore seus resultados.",
+      "Tenha respostas precisas: consulte o dólar, bitcoin, indicadores de ações como PETR4 ou carteiras públicas filtradas. Informação certa, na hora certa.",
   },
 ];
 
@@ -55,26 +52,65 @@ export const feedback = [
   {
     id: "feedback-1",
     content:
-      "Transformei minha visão sobre investimentos! Com o Solomon, entendo o mercado e faço escolhas seguras. Ter as recomendações no WhatsApp é prático e me dá controle!",
-    name: "Mariana S., São Paulo",
-    title: "Médica Veterinária",
-    img: people01,
+      "Uso o Solomon todos os dias para acompanhar indicadores e entender o que está movimentando o mercado. A praticidade é surreal!",
+    name: "Marcelo Carbonari",
+    title: "Empreendedor",
   },
   {
     id: "feedback-2",
     content:
-      "Assessoria acessível e completa! Investir parecia complicado, mas o Solomon facilita tudo para mim, com atualizações e orientações no WhatsApp. Muito prático!",
-    name: "Rafael L., Rio de Janeiro",
+      "Perguntei sobre o dólar e recebi a cotação atual com contexto em segundos. Nunca mais precisei abrir vários apps pra isso.",
+    name: "Carlos Romagnolli",
     title: "Autônomo",
-    img: people02,
   },
   {
     id: "feedback-3",
     content:
-      "Com as orientações do Solomon, melhorei meu foco e meus rendimentos, antes me sentia inseguro e agora decido com mais confiança. A inteligência artificial faz toda a diferença!",
-    name: "Gabriela M., Belo Horizonte",
-    title: "Engenheira Civil",
-    img: people03,
+      "Gosto das notícias filtradas pelo meu perfil. Chega toda semana no WhatsApp. Sinto que estou sempre um passo à frente.",
+    name: "Bruno Martins",
+    title: "Autônomo",
+  },
+  {
+    id: "feedback-4",
+    content:
+      "Eu pedi ajuda para montar uma carteira e ele me mostrou as carteiras públicas de bancos grandes. Muito bom para comparar!",
+    name: "Renata Oliveira",
+    title: "Advogada",
+  },
+  {
+    id: "feedback-5",
+    content:
+      "Investir ficou menos solitário. É como ter um assistente do lado, respondendo dúvidas e trazendo tudo que importa.",
+    name: "Lucas Freitas",
+    title: "Engenheiro",
+  },
+  {
+    id: "feedback-6",
+    content:
+      "O Solomon virou minha central de informações. Pergunto sobre ações e ele me traz indicadores na hora. Simplesmente genial!",
+    name: "Patrícia Menezes",
+    title: "Analista Financeira",
+  },
+  {
+    id: "feedback-7",
+    content:
+      "O atendimento no WhatsApp é rápido, direto e realmente útil. Não tem enrolação, só informação que faz sentido pra mim.",
+    name: "João Pedro Araújo",
+    title: "Servidor Público",
+  },
+  {
+    id: "feedback-8",
+    content:
+      "Sinto que finalmente encontrei um produto que respeita meu tempo. As atualizações chegam, leio em 2 minutos e já entendi tudo.",
+    name: "Elaine Rocha",
+    title: "Designer Gráfica",
+  },
+  {
+    id: "feedback-9",
+    content:
+      "Mesmo sem saber muito de investimentos, me sinto orientado. As explicações são claras e os dados vêm no momento certo.",
+    name: "Tiago Gomes",
+    title: "Estudante de Engenharia",
   },
 ];
 
@@ -84,7 +120,7 @@ export const footerLinks = [
     links: [
       {
         name: "Instagram",
-        link: "https://www.instagram.com/paulobstg/",
+        link: "https://www.instagram.com/solomon.finance/?hl=pt_BR",
       },
     ],
   },
@@ -94,7 +130,7 @@ export const socialMedia = [
   {
     id: "social-media-1",
     icon: instagram,
-    link: "https://www.instagram.com/paulobstg/",
+    link: "https://www.instagram.com/solomon.finance/?hl=pt_BR",
   },
 ];
 

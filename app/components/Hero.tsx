@@ -15,24 +15,14 @@ const prints = [
 const Hero = () => {
   return (
     <section id="home" className="relative w-full flex md:flex-row flex-col md:gap-6 paddingY overflow-hidden">
-      {/* 💻 Prints desktop: atrás do robô */}
+      {/* Prints desktop */}
       <div className="hidden md:block absolute w-full h-full z-0 pointer-events-none">
         {prints.map((print, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.7 }}
-            animate={{
-              opacity: 0.3,
-              scale: 1,
-              y: [0, -6, 0],
-            }}
-            transition={{
-              delay: print.delay,
-              duration: 6,
-              repeat: Infinity,
-              repeatType: 'loop',
-              ease: 'easeInOut',
-            }}
+            animate={{ opacity: 0.3, scale: 1, y: [0, -6, 0] }}
+            transition={{ delay: print.delay, duration: 6, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
             className="absolute rounded-xl overflow-hidden border border-white"
             style={{
               top: `${10 + index * 20}%`,
@@ -42,13 +32,7 @@ const Hero = () => {
               zIndex: 1,
             }}
           >
-            <Image
-              src={print.src}
-              alt={`print-${index}`}
-              fill
-              className="object-cover"
-              loading="lazy"
-            />
+            <Image src={print.src} alt={`print-${index}`} fill className="object-cover" loading="lazy" />
           </motion.div>
         ))}
       </div>
@@ -63,19 +47,17 @@ const Hero = () => {
       >
         <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
           <p className="paragraph ml-2 text-[11px] md:text-base leading-tight">
-            <span className="text-white font-semibold">Solomon</span> o 1° Assessor de Investimentos <span className="text-white">com IA</span> do Brasil. 🏆
+            <span className="text-white font-semibold">Solomon</span> • 1° Assessor de Investimentos <span className="text-white font-semibold">com IA</span> no Brasil.
           </p>
         </div>
 
-        <h1 className="font-poppins font-semibold text-[26px] ss:text-[36px] md:text-[56px] text-white leading-tight md:leading-[80px]">
-          Transforme <br className="sm:block hidden" />
-          <span className="text-gradient">sua forma de investir</span>
-          <br />com Solomon.
+        <h1 className="font-poppins font-bold text-[28px] ss:text-[40px] md:text-[58px] text-white leading-tight md:leading-[72px]">
+          Invista com <span className="text-gradient">inteligência artificial</span><br />
+          de forma <span className="text-gradient">fácil, segura e eficiente.</span>
         </h1>
 
-        <p className="paragraph max-w-[470px] mt-5">
-          O primeiro Assessor de Investimentos com Inteligência Artificial, feito para você – seja um investidor experiente ou alguém que está começando agora.
-          Tenha o poder da IA junto com uma consultoria personalizada e acessível, projetada para impulsionar seus resultados com segurança e praticidade.
+        <p className="paragraph max-w-[480px] mt-6 text-white/90">
+          A consultoria de investimentos do futuro. Tenha análises atualizadas, sugestões personalizadas e acompanhamento direto via WhatsApp — tudo isso com a precisão da IA.
         </p>
 
         <div className="hidden md:inline-block mt-10">
@@ -86,7 +68,7 @@ const Hero = () => {
             className="group inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-300 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-cyan-500/60"
           >
             <span className="flex items-center gap-2 font-poppins font-semibold text-white text-sm md:text-base z-10">
-              🚀 Teste a IA (Grátis)
+              🚀 Testar agora, é grátis
               <FiArrowRightCircle className="text-white text-xl group-hover:translate-x-1 transition-transform" />
             </span>
           </a>
@@ -113,28 +95,12 @@ const Hero = () => {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.7 }}
-                animate={{
-                  opacity: 0.3,
-                  scale: 1,
-                  y: [0, -4, 0],
-                }}
-                transition={{
-                  delay: print.delay,
-                  duration: 5,
-                  repeat: Infinity,
-                  repeatType: 'loop',
-                  ease: 'easeInOut',
-                }}
+                animate={{ opacity: 0.3, scale: 1, y: [0, -4, 0] }}
+                transition={{ delay: print.delay, duration: 5, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
                 className="absolute w-[130px] h-[130px] rounded-xl overflow-hidden border border-white"
                 style={positions[index]}
               >
-                <Image
-                  src={print.src}
-                  alt={`print-${index}`}
-                  fill
-                  className="object-cover"
-                  loading="lazy"
-                />
+                <Image src={print.src} alt={`print-${index}`} fill className="object-cover" loading="lazy" />
               </motion.div>
             );
           })}
