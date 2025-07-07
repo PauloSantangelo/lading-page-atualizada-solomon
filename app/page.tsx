@@ -11,9 +11,12 @@ const Clients = dynamic(() => import('./components/Clients'));
 const Billing = dynamic(() => import('./components/Billing'));
 const PricingPlans = dynamic(() => import('./components/PricingPlans'));
 const CardDeal = dynamic(() => import('./components/CardDeal'));
+const PrintGallery = dynamic(() => import('./components/PrintGallery'));
+// --- NOVO COMPONENTE IMPORTADO ---
+const Duvidas = dynamic(() => import('./components/Duvidas')); 
 const CTA = dynamic(() => import('./components/CTA'));
 const Footer = dynamic(() => import('./components/Footer'));
-const PrintGallery = dynamic(() => import('./components/PrintGallery'));
+
 
 export default function Home() {
   return (
@@ -39,6 +42,8 @@ export default function Home() {
           <Billing />
           <PricingPlans />
           <CardDeal />
+          {/* --- NOVA SEÇÃO ADICIONADA AQUI --- */}
+          <Duvidas /> 
           <CTA />
           <Footer />
         </div>

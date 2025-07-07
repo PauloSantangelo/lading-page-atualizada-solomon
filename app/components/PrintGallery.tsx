@@ -2,8 +2,11 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { BrainCircuit } from 'lucide-react';
+// PanInfo foi importado para tipar a função de drag
+import { motion, AnimatePresence, PanInfo } from 'framer-motion';
+import { BrainCircuit, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Dados dos prints (sem alteração)
 const prints = [
   '/solomon-whats1.webp',
   '/solomon-whats2.webp',
@@ -14,70 +17,158 @@ const prints = [
   '/solomon-whats7.webp',
 ];
 
-const PrintGallery = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+// Componente de fundo (sem alteração)
+function SectionBackground() {
+  return (
+    <div 
+      className="absolute inset-0 w-full h-full bg-[#04091a] bg-[url('/fundo-prints.png')] bg-no-repeat bg-cover bg-center"
+      aria-hidden="true"
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-[#04091a]/95 via-[#04091a]/80 to-[#04091a]/95 z-0" />
+    </div>
+  );
+}
+
+const InteractiveGallery = () => {
+  const [[activeIndex, direction], setActiveIndex] = useState([Math.floor(prints.length / 2), 0]);
+
+  const handleNext = () => {
+    setActiveIndex([(activeIndex + 1) % prints.length, 1]);
+  };
+
+  const handlePrev = () => {
+    setActiveIndex([(activeIndex - 1 + prints.length) % prints.length, -1]);
+  };
+
+  // CORREÇÃO: Tipagem adicionada a 'info' (PanInfo) e 'event' foi ignorado com '_'
+  const handleDragEnd = (_: any, info: PanInfo) => {
+    const swipeThreshold = 50;
+    if (info.offset.x < -swipeThreshold) {
+      handleNext();
+    } else if (info.offset.x > swipeThreshold) {
+      handlePrev();
+    }
+  };
+  
+  // CORREÇÃO: Tipagem 'number' adicionada ao parâmetro 'direction'
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? '100%' : '-100%',
+      opacity: 0,
+    }),
+  };
 
   return (
-    <section
-      id="prints"
-      className="relative w-full py-20 px-4 md:px-20 bg-[#0f172a] bg-[url('/fundo-prints.png')] bg-no-repeat bg-cover bg-center"
-    >
-      {/* Sobreposição escura para contraste */}
-      <div className="absolute inset-0 bg-[#0f172a]/90 z-0" />
+    <section id="prints" className="relative w-full overflow-hidden py-24 sm:py-32">
+      <SectionBackground />
 
-      <div className="relative z-10">
-        <h2 className="text-white text-[26px] md:text-[36px] font-bold mb-10 text-center">
-          Veja como o <span className="text-gradient">Solomon responde</span> na prática
-        </h2>
-
-        {/* Galeria de prints */}
-        <div className="relative flex justify-center items-center h-[460px] md:h-[500px] overflow-visible mb-12">
-          {prints.map((src, index) => {
-            const isActive = index === activeIndex;
-            const offset = index - activeIndex;
-
-            return (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`absolute transition-all duration-500 ease-in-out rounded-2xl overflow-hidden
-                  border border-white/10 hover:border-cyan-400
-                  ${isActive ? 'z-30 scale-100 shadow-2xl border-cyan-500' : 'scale-75 opacity-40 z-10'}
-                `}
-                style={{
-                  transform: `translateX(${offset * 140}px) scale(${isActive ? 1 : 0.85})`,
-                  width: isActive ? 200 : 120,
-                  height: isActive ? 360 : 200,
-                  top: isActive ? '20%' : '30%',
-                }}
-              >
-                <Image
-                  src={src}
-                  alt={`print-${index + 1}`}
-                  width={200}
-                  height={360}
-                  className="object-cover"
-                />
-              </button>
-            );
-          })}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center">
+            {/* AJUSTE: Tamanho do título no mobile reduzido para text-3xl */}
+            <h2 className="font-poppins text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300">
+                Veja como o Solomon responde
+            </h2>
+            <p className="mt-4 text-lg text-neutral-400 max-w-2xl mx-auto">
+                Interaja com exemplos reais e descubra a clareza e a precisão das análises que você receberá diretamente no seu WhatsApp.
+            </p>
         </div>
 
-        {/* Botão de CTA responsivo */}
-        <div className="flex justify-center">
-          <a
-            href="https://wa.me/SEUNUMERO"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 md:gap-3 text-[#0f172a] text-base md:text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
-          >
-            <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
-            Comece a investir com IA
-          </a>
+        {/* Carrossel 3D para Desktop */}
+        <div className="hidden md:flex relative mt-16 justify-center items-center h-[600px]">
+          <div className="absolute w-full h-full" style={{ perspective: '1000px' }}>
+            {prints.map((src, index) => {
+              const offset = index - activeIndex;
+              return (
+                <motion.div
+                  key={index}
+                  className="absolute top-0 left-0 right-0 bottom-0 m-auto"
+                  initial={false}
+                  animate={{
+                    transform: `translateX(${offset * 25}%) rotateY(${offset * -15}deg) translateZ(${Math.abs(offset) * -200}px)`,
+                    opacity: Math.abs(offset) < 3 ? 1 : 0,
+                    scale: offset === 0 ? 1 : 0.7,
+                    zIndex: prints.length - Math.abs(offset),
+                  }}
+                  transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+                  onClick={() => setActiveIndex([index, index > activeIndex ? 1 : -1])}
+                >
+                  <div className={`relative w-[250px] h-[540px] transition-all duration-300 rounded-3xl overflow-hidden shadow-2xl cursor-pointer
+                    ${offset === 0 ? 'border-2 border-cyan-400 shadow-cyan-500/50' : 'border border-white/10'}`
+                  }>
+                    <Image src={src} alt={`Exemplo de resposta do Solomon ${index + 1}`} fill className="object-cover"/>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* AJUSTE: Slider Mobile com tamanho reduzido */}
+        <div className="md:hidden relative mt-12 flex justify-center items-center h-[420px] w-full max-w-[230px] mx-auto overflow-hidden">
+            <AnimatePresence initial={false} custom={direction}>
+                <motion.div
+                    key={activeIndex}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 }}}
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.2}
+                    onDragEnd={handleDragEnd}
+                    className="absolute w-full h-full"
+                >
+                    <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-2 border-cyan-400">
+                        <Image src={prints[activeIndex]} alt={`Exemplo de resposta do Solomon ${activeIndex + 1}`} fill className="object-cover" />
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+        </div>
+
+        {/* Controles de Navegação */}
+        <div className="flex justify-center items-center gap-6 mt-8">
+            <button onClick={handlePrev} className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+                <ChevronLeft className="w-6 h-6 text-white" />
+            </button>
+            <div className="flex items-center gap-2">
+                {prints.map((_, index) => (
+                    <div key={index} onClick={() => setActiveIndex([index, index > activeIndex ? 1 : -1])} className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === index ? 'w-6 bg-cyan-400' : 'w-2 bg-white/20'}`} />
+                ))}
+            </div>
+            <button onClick={handleNext} className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+                <ChevronRight className="w-6 h-6 text-white" />
+            </button>
+        </div>
+        
+        {/* Botão de CTA */}
+        <div className="flex justify-center mt-20">
+            <motion.a
+                href="https://wa.me/SEUNUMERO" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 text-white text-base md:text-lg font-semibold bg-gradient-to-br from-cyan-500 to-blue-600 px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
+                whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 200, 255, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
+            >
+                <BrainCircuit className="w-6 h-6" />
+                Quero testar o Solomon
+            </motion.a>
         </div>
       </div>
     </section>
   );
 };
 
-export default PrintGallery;
+export default InteractiveGallery;
