@@ -47,17 +47,20 @@ const Hero = () => {
       >
         <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
           <p className="paragraph ml-2 text-[10px] md:text-base leading-tight">
-            <span className="text-white font-semibold">Solomon</span> • 1° Assessor de Investimentos <span className="text-white font-semibold">com IA</span> no Brasil.
+            <span className="text-white font-semibold">Informação</span> simples, para <span className="text-white font-semibold">investir com clareza.</span>
           </p>
         </div>
 
-        <h1 className="font-poppins font-bold text-[22px] ss:text-[30px] md:text-[58px] text-white leading-tight md:leading-[72px] max-w-[95%]">
-          Invista com <span className="text-gradient">inteligência artificial</span><br />
-          de forma <span className="text-gradient">fácil, segura e eficiente.</span>
+        <h1 className="font-poppins font-bold text-[20px] ss:text-[28px] md:text-[44px] text-white leading-tight md:leading-[56px] max-w-[95%]">
+          Ficar por dentro do mercado ficou mais fácil.
         </h1>
 
+        <p className="font-poppins font-semibold text-[22px] ss:text-[26px] md:text-[34px] text-gradient mt-4 max-w-[95%] md:max-w-[600px] leading-snug">
+          Receba tudo do seu agente de investimentos, no WhatsApp.
+        </p>
+
         <p className="paragraph text-white/90 mt-4 text-sm md:text-base leading-tight md:leading-[24px] max-w-[95%] md:max-w-[480px]">
-          A consultoria de investimentos do futuro. Tenha análises atualizadas, sugestões personalizadas e acompanhamento direto via WhatsApp — tudo isso com a precisão da IA.
+          Solomon é um agente com IA que conversa com você no WhatsApp. Ele te atualiza, responde dúvidas e te guia nas decisões de investimento — do seu jeito.
         </p>
 
         <div className="hidden md:inline-block mt-10">
@@ -68,7 +71,7 @@ const Hero = () => {
             className="group inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-300 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-cyan-500/60"
           >
             <span className="flex items-center gap-2 font-poppins font-semibold text-white text-sm md:text-base z-10">
-              🚀 Testar agora, é grátis
+              🚀 Falar com o Solomon
               <FiArrowRightCircle className="text-white text-xl group-hover:translate-x-1 transition-transform" />
             </span>
           </a>
@@ -83,7 +86,6 @@ const Hero = () => {
         whileInView="show"
         viewport={{ once: true }}
       >
-        {/* Prints mobile */}
         <div className="absolute inset-0 md:hidden z-0 pointer-events-none">
           {prints.map((print, index) => {
             const positions = [
@@ -116,7 +118,6 @@ const Hero = () => {
           quality={100}
         />
 
-        {/* Gradientes */}
         <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
         <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40" />
         <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient" />
@@ -130,7 +131,7 @@ const Hero = () => {
         className="md:hidden fixed bottom-5 right-5 z-50 animate-wiggle group inline-flex items-center justify-center px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-300 hover:to-blue-500 shadow-md"
       >
         <span className="flex items-center gap-2 font-poppins font-semibold text-white text-sm z-10">
-          🚀 Testar a IA
+          🚀 Falar com o Solomon
           <FiArrowRightCircle className="text-white text-lg group-hover:translate-x-1 transition-transform" />
         </span>
       </a>
@@ -139,4 +140,3 @@ const Hero = () => {
 };
 
 export default Hero;
-5

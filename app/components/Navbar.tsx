@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { navVariants } from "../styles/animations";
@@ -7,9 +8,9 @@ import { close, logo, menu } from "../../public";
 
 const navLinks = [
   { id: "home", title: "Início" },
-  { id: "Sobre", title: "Sobre" },       // será usado em <section id="sobre">
-  { id: "clients", title: "Feedback" },  // Testimonials
-  { id: "Produto", title: "Produto" },   // billing.tsx
+  { id: "Sobre", title: "Sobre" },
+  { id: "clients", title: "Feedback" },
+  { id: "Produto", title: "Produto" }, // Agora aponta para a seção do PrintGallery
 ];
 
 const Navbar = () => {

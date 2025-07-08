@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Solomon",
-  description: "Seu Assessor de Investimentos com Inteligência Artificial",
+  description: "Seu Agente de Investimentos com Inteligência Artificial",
 };
 
 export default function RootLayout({

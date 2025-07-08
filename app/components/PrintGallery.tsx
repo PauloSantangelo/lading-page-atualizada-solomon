@@ -2,11 +2,9 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-// PanInfo foi importado para tipar a função de drag
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { BrainCircuit, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Dados dos prints (sem alteração)
 const prints = [
   '/solomon-whats1.webp',
   '/solomon-whats2.webp',
@@ -17,7 +15,6 @@ const prints = [
   '/solomon-whats7.webp',
 ];
 
-// Componente de fundo (sem alteração)
 function SectionBackground() {
   return (
     <div 
@@ -40,7 +37,6 @@ const InteractiveGallery = () => {
     setActiveIndex([(activeIndex - 1 + prints.length) % prints.length, -1]);
   };
 
-  // CORREÇÃO: Tipagem adicionada a 'info' (PanInfo) e 'event' foi ignorado com '_'
   const handleDragEnd = (_: any, info: PanInfo) => {
     const swipeThreshold = 50;
     if (info.offset.x < -swipeThreshold) {
@@ -49,8 +45,7 @@ const InteractiveGallery = () => {
       handlePrev();
     }
   };
-  
-  // CORREÇÃO: Tipagem 'number' adicionada ao parâmetro 'direction'
+
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
@@ -69,21 +64,20 @@ const InteractiveGallery = () => {
   };
 
   return (
-    <section id="prints" className="relative w-full overflow-hidden py-24 sm:py-32">
+    <section id="Produto" className="relative w-full overflow-hidden py-24 sm:py-32">
       <SectionBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center">
-            {/* AJUSTE: Tamanho do título no mobile reduzido para text-3xl */}
-            <h2 className="font-poppins text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300">
-                Veja como o Solomon responde
-            </h2>
-            <p className="mt-4 text-lg text-neutral-400 max-w-2xl mx-auto">
-                Interaja com exemplos reais e descubra a clareza e a precisão das análises que você receberá diretamente no seu WhatsApp.
-            </p>
+          <h2 className="font-poppins text-3xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300">
+            Veja como o Solomon responde
+          </h2>
+          <p className="mt-4 text-lg text-neutral-400 max-w-2xl mx-auto">
+            Interaja com exemplos reais e descubra a clareza e a precisão das análises que você receberá diretamente no seu WhatsApp.
+          </p>
         </div>
 
-        {/* Carrossel 3D para Desktop */}
+        {/* Carrossel 3D Desktop */}
         <div className="hidden md:flex relative mt-16 justify-center items-center h-[600px]">
           <div className="absolute w-full h-full" style={{ perspective: '1000px' }}>
             {prints.map((src, index) => {
@@ -102,10 +96,10 @@ const InteractiveGallery = () => {
                   transition={{ type: 'spring', stiffness: 100, damping: 20 }}
                   onClick={() => setActiveIndex([index, index > activeIndex ? 1 : -1])}
                 >
-                  <div className={`relative w-[250px] h-[540px] transition-all duration-300 rounded-3xl overflow-hidden shadow-2xl cursor-pointer
-                    ${offset === 0 ? 'border-2 border-cyan-400 shadow-cyan-500/50' : 'border border-white/10'}`
-                  }>
-                    <Image src={src} alt={`Exemplo de resposta do Solomon ${index + 1}`} fill className="object-cover"/>
+                  <div className={`relative w-[250px] h-[540px] transition-all duration-300 rounded-3xl overflow-hidden shadow-2xl cursor-pointer ${
+                    offset === 0 ? 'border-2 border-cyan-400 shadow-cyan-500/50' : 'border border-white/10'
+                  }`}>
+                    <Image src={src} alt={`Exemplo ${index + 1}`} fill className="object-cover" />
                   </div>
                 </motion.div>
               );
@@ -113,58 +107,59 @@ const InteractiveGallery = () => {
           </div>
         </div>
 
-        {/* AJUSTE: Slider Mobile com tamanho reduzido */}
+        {/* Slider Mobile */}
         <div className="md:hidden relative mt-12 flex justify-center items-center h-[420px] w-full max-w-[230px] mx-auto overflow-hidden">
-            <AnimatePresence initial={false} custom={direction}>
-                <motion.div
-                    key={activeIndex}
-                    custom={direction}
-                    variants={slideVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 }}}
-                    drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.2}
-                    onDragEnd={handleDragEnd}
-                    className="absolute w-full h-full"
-                >
-                    <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-2 border-cyan-400">
-                        <Image src={prints[activeIndex]} alt={`Exemplo de resposta do Solomon ${activeIndex + 1}`} fill className="object-cover" />
-                    </div>
-                </motion.div>
-            </AnimatePresence>
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={activeIndex}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={handleDragEnd}
+              className="absolute w-full h-full"
+            >
+              <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-2 border-cyan-400">
+                <Image src={prints[activeIndex]} alt={`Exemplo ${activeIndex + 1}`} fill className="object-cover" />
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Controles de Navegação */}
+        {/* Navegação */}
         <div className="flex justify-center items-center gap-6 mt-8">
-            <button onClick={handlePrev} className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
-                <ChevronLeft className="w-6 h-6 text-white" />
-            </button>
-            <div className="flex items-center gap-2">
-                {prints.map((_, index) => (
-                    <div key={index} onClick={() => setActiveIndex([index, index > activeIndex ? 1 : -1])} className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === index ? 'w-6 bg-cyan-400' : 'w-2 bg-white/20'}`} />
-                ))}
-            </div>
-            <button onClick={handleNext} className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
-                <ChevronRight className="w-6 h-6 text-white" />
-            </button>
+          <button onClick={handlePrev} className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+            <ChevronLeft className="w-6 h-6 text-white" />
+          </button>
+          <div className="flex items-center gap-2">
+            {prints.map((_, index) => (
+              <div key={index} onClick={() => setActiveIndex([index, index > activeIndex ? 1 : -1])}
+                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === index ? 'w-6 bg-cyan-400' : 'w-2 bg-white/20'}`} />
+            ))}
+          </div>
+          <button onClick={handleNext} className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+            <ChevronRight className="w-6 h-6 text-white" />
+          </button>
         </div>
-        
-        {/* Botão de CTA */}
+
+        {/* Botão CTA */}
         <div className="flex justify-center mt-20">
-            <motion.a
-                href="https://wa.me/SEUNUMERO" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-white text-base md:text-lg font-semibold bg-gradient-to-br from-cyan-500 to-blue-600 px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
-                whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 200, 255, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-            >
-                <BrainCircuit className="w-6 h-6" />
-                Quero testar o Solomon
-            </motion.a>
+          <motion.a
+            href="https://wa.me/SEUNUMERO"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 text-white text-base md:text-lg font-semibold bg-gradient-to-br from-cyan-500 to-blue-600 px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
+            whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 200, 255, 0.3)" }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <BrainCircuit className="w-6 h-6" />
+            Quero testar o Solomon
+          </motion.a>
         </div>
       </div>
     </section>

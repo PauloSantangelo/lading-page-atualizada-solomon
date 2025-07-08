@@ -49,12 +49,12 @@ const Business = () => (
       viewport={{ once: true }}
     >
       <h2 className="font-poppins font-bold text-white text-[22px] sm:text-[32px] md:text-[40px] leading-tight md:leading-[56px]">
-        Inteligência artificial para <span className="text-gradient">investidores de verdade</span><br className="sm:block hidden" />
-        com dados atualizados e acesso em tempo real.
+        IA de verdade para quem investe de verdade.<br className="sm:block hidden" />
+        <span className="text-gradient">Clareza, dados e agilidade no WhatsApp.</span>
       </h2>
 
-      <p className="paragraph text-sm md:text-base leading-tight md:leading-[26px] text-white/90 max-w-[95%] md:max-w-[480px] mt-5">
-        Receba as principais notícias da semana com base no seu perfil de interesse, acesse dados atualizados como dólar, bitcoin e indicadores de ações, e filtre carteiras públicas de grandes instituições caso deseje comparar estratégias. Tudo de forma prática, rápida e inteligente.
+      <p className="paragraph text-sm md:text-base leading-tight md:leading-[26px] text-white/90 max-w-[95%] md:max-w-[500px] mt-5">
+        O Solomon te avisa quando algo importante acontece no mercado. Notícias filtradas, dados em tempo real e comparativos úteis — tudo adaptado ao seu perfil e direto no WhatsApp.
       </p>
 
       <div className="mt-8">
@@ -65,7 +65,7 @@ const Business = () => (
           className="inline-flex items-center gap-3 text-[#0f172a] text-sm md:text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
         >
           <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
-          Comece a investir com IA
+          Quero testar agora
         </a>
       </div>
     </motion.div>
