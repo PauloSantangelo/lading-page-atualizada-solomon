@@ -18,7 +18,7 @@ const prints = [
 function SectionBackground() {
   return (
     <div 
-      className="absolute inset-0 w-full h-full bg-[#04091a] bg-[url('/fundo-prints.png')] bg-no-repeat bg-cover bg-center"
+      className="absolute inset-0 w-full h-full bg-[#04091a] bg-[url('/fundo-prints.webp')] bg-no-repeat bg-cover bg-center"
       aria-hidden="true"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-[#04091a]/95 via-[#04091a]/80 to-[#04091a]/95 z-0" />

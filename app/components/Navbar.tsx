@@ -10,7 +10,7 @@ const navLinks = [
   { id: "home", title: "Início" },
   { id: "Sobre", title: "Sobre" },
   { id: "clients", title: "Feedback" },
-  { id: "Produto", title: "Produto" }, // Agora aponta para a seção do PrintGallery
+  { id: "Produto", title: "Produto" },
 ];
 
 const Navbar = () => {
@@ -25,7 +25,15 @@ const Navbar = () => {
       whileInView="show"
       viewport={{ once: true }}
     >
-      <Image src={logo} alt="logo Solomon" width={124} height={32} loading="eager" />
+      <Image
+        src={logo}
+        alt="Logo Solomon"
+        width={124}
+        height={32}
+        priority
+        fetchPriority="high"
+        quality={90}
+      />
 
       {/* Desktop */}
       <div className="hidden sm:flex items-center gap-10 ml-auto">
@@ -43,7 +51,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Botão extra */}
         <a
           href="https://wa.me/5514988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
           target="_blank"
@@ -58,12 +65,14 @@ const Navbar = () => {
       <div className="sm:hidden flex flex-1 justify-end items-center">
         <Image
           src={toggle ? close : menu}
-          alt="menu"
+          alt="Menu"
           width={28}
           height={28}
           priority
           className="object-contain cursor-pointer"
           onClick={() => setToggle(!toggle)}
+          fetchPriority="low"
+          quality={80}
         />
 
         {toggle && (

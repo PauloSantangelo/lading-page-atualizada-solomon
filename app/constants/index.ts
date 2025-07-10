@@ -112,6 +112,13 @@ export const feedback = [
     name: "Tiago Gomes",
     title: "Estudante de Engenharia",
   },
+  {
+    id: "feedback-10",
+    content:
+      "Pra quem não tem tempo pra cursos longos, o Solomon é perfeito. Ele mostra os melhores caminhos com clareza, dá o passo a passo e ainda traz notícias e alertas que realmente importam. Uso e recomendo!",
+    name: "Marcelo Chaguri",
+    title: "Advogado",
+  },
 ];
 
 export const footerLinks = [

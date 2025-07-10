@@ -32,7 +32,14 @@ const Hero = () => {
               zIndex: 1,
             }}
           >
-            <Image src={print.src} alt={`print-${index}`} fill className="object-cover" loading="lazy" />
+            <Image
+              src={print.src}
+              alt={`print-${index}`}
+              fill
+              className="object-cover"
+              loading="lazy"
+              decoding="async"
+            />
           </motion.div>
         ))}
       </div>
@@ -102,7 +109,14 @@ const Hero = () => {
                 className="absolute w-[130px] h-[130px] rounded-xl overflow-hidden border border-white"
                 style={positions[index]}
               >
-                <Image src={print.src} alt={`print-${index}`} fill className="object-cover" loading="lazy" />
+                <Image
+                  src={print.src}
+                  alt={`print-${index}`}
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
               </motion.div>
             );
           })}
@@ -115,7 +129,7 @@ const Hero = () => {
           height={500}
           className="relative z-[5] w-full sm:w-[100%] h-auto"
           priority
-          quality={100}
+          quality={90}
         />
 
         <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient" />
