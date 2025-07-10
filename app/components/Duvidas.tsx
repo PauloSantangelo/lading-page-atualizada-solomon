@@ -59,18 +59,22 @@ const AccordionItem = ({
   faq,
   isOpen,
   onClick,
+  index,
 }: {
   faq: typeof faqData[0];
   isOpen: boolean;
   onClick: () => void;
+  index: number;
 }) => {
+  const id = `faq-${index}`;
+
   return (
     <div className="border-b border-white/10">
       <button
         onClick={onClick}
         className="flex w-full items-center justify-between py-5 text-left"
         aria-expanded={isOpen}
-        aria-controls={`faq-answer-${faq.question}`}
+        aria-controls={id}
       >
         <span
           className={`text-lg font-medium transition-colors ${
@@ -93,7 +97,7 @@ const AccordionItem = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            id={`faq-answer-${faq.question}`}
+            id={id}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -145,6 +149,7 @@ const Duvidas = () => {
                 faq={faq}
                 isOpen={expandedIndex === index}
                 onClick={() => handleToggle(index)}
+                index={index}
               />
             ))}
           </div>
