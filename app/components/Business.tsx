@@ -73,13 +73,13 @@ const Business = () => (
 
       <div className="mt-8">
         <a
-          href="https://wa.me/5514988130629?text=Ol%C3%A1%2C%20quero%20testar%20o%20Solomon%21"
+          href="https://pay.solomonchat.com" // Link de pagamento atualizado
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 text-[#0f172a] text-sm md:text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
         >
           <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
-          Quero testar agora
+          Comece a Investir com IA {/* Texto CTA atualizado */}
         </a>
       </div>
     </motion.div>

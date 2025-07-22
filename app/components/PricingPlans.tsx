@@ -41,7 +41,7 @@ const PricingPlans = () => {
             <li>✅ Insights e análises exclusivas</li>
           </ul>
           <a
-            href="https://www.asaas.com/c/qspw52fq2ekfg199"
+            href="https://pay.solomonchat.com?plano=mensal"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a] z-10"
@@ -63,7 +63,7 @@ const PricingPlans = () => {
             <li>✅ Assistente 100% personalizado</li>
           </ul>
           <a
-            href="https://www.asaas.com/c/s71c698qgip5npsd"
+            href="https://pay.solomonchat.com?plano=anual"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a]"

@@ -205,7 +205,7 @@ const InteractiveGallery = () => {
         {/* Botão CTA */}
         <div className="flex justify-center mt-20">
           <motion.a
-            href="https://wa.me/SEUNUMERO"
+            href="https://pay.solomonchat.com" // Link de pagamento atualizado
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 text-white text-base md:text-lg font-semibold bg-gradient-to-br from-cyan-500 to-blue-600 px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
@@ -216,7 +216,7 @@ const InteractiveGallery = () => {
             whileTap={{ scale: 0.95 }}
           >
             <BrainCircuit className="w-6 h-6" />
-            Quero testar o Solomon
+            Comece a Investir com IA {/* Texto CTA atualizado */}
           </motion.a>
         </div>
       </div>

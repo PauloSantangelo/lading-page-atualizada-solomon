@@ -59,7 +59,7 @@ const CardDeal = () => {
           </p>
 
           <motion.a
-            href="https://wa.me/SEUNUMERO"
+            href="https://pay.solomonchat.com"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 inline-flex items-center gap-3 text-white text-base md:text-lg font-semibold bg-gradient-to-br from-cyan-500 to-blue-600 px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
@@ -67,7 +67,7 @@ const CardDeal = () => {
             whileTap={{ scale: 0.95 }}
           >
             <BrainCircuit className="w-6 h-6" />
-            Quero testar agora
+            Comece a Investir com IA
           </motion.a>
         </motion.div>
 
