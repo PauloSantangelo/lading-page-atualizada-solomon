@@ -15,21 +15,16 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Solomon",
   description: "Seu Agente de Investimentos com Inteligência Artificial",
-  authors: [{ name: "VIBE", url: "https://vibe.digital" }],
   applicationName: "Solomon",
+  authors: [{ name: "VIBE", url: "https://vibe.digital" }],
+  themeColor: "#000000", // ✅ OK aqui dentro
 };
 
-// ✅ Viewport separado (obrigatório agora)
+// ✅ Viewport separado (como recomendado)
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1.0,
 };
-
-// ✅ ThemeColor separado
-export const themeColor = "#000000";
-
-// ✅ Color scheme separado
-export const colorScheme = "dark";
 
 export default function RootLayout({
   children,
