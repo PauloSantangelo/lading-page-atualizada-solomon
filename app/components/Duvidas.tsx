@@ -49,7 +49,7 @@ const imagesForCycle = [
     alt: 'Screenshot do Solomon respondendo sobre notícias.',
   },
   {
-    src: '/teste.webp',
+    src: '/robo-solomon.webp',
     alt: 'Ilustração do robô Solomon.',
   },
 ];

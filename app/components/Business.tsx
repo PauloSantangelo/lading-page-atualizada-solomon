@@ -15,13 +15,13 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ icon, title, content, index }: FeatureCardProps) => (
   <div
-    className={`flex p-6 rounded-[20px] ${
+    className={`feature-card flex p-5 rounded-2xl ${
       index !== Sobre.length - 1 ? "mb-6" : "mb-0"
-    } feature-card`}
+    }`}
     role="group"
     aria-labelledby={`feature-title-${index}`}
   >
-    <div className="w-[64px] h-[64px] rounded-full flexCenter bg-dimBlue">
+    <div className="w-[56px] h-[56px] rounded-full flexCenter bg-cyan-500/10">
       <Image
         src={icon}
         alt=""
@@ -31,14 +31,14 @@ const FeatureCard = ({ icon, title, content, index }: FeatureCardProps) => (
         priority
       />
     </div>
-    <div className="flex-1 flex flex-col ml-3">
+    <div className="flex-1 flex flex-col ml-4">
       <h3
         id={`feature-title-${index}`}
-        className="font-poppins font-semibold text-white text-[16px] md:text-[18px] leading-[22px] mb-1"
+        className="font-semibold text-white text-[15px] md:text-[17px] mb-1"
       >
         {title}
       </h3>
-      <p className="font-poppins font-normal text-dimWhite text-[14px] md:text-[16px] leading-[22px]">
+      <p className="text-white/70 text-sm leading-snug">
         {content}
       </p>
     </div>
@@ -60,26 +60,26 @@ const Business = () => (
     >
       <h2
         id="business-heading"
-        className="font-poppins font-bold text-white text-[22px] sm:text-[32px] md:text-[40px] leading-tight md:leading-[56px]"
+        className="font-bold text-white text-[22px] sm:text-[32px] md:text-[38px] leading-tight md:leading-[50px]"
       >
-        IA de verdade para quem investe de verdade.
+        Clareza e velocidade no que realmente importa.
         <br className="sm:block hidden" />
-        <span className="text-gradient">Clareza, dados e agilidade no WhatsApp.</span>
+        <span className="text-gradient">Tudo direto no seu WhatsApp.</span>
       </h2>
 
-      <p className="paragraph text-sm md:text-base leading-tight md:leading-[26px] text-white/90 max-w-[95%] md:max-w-[500px] mt-5">
-        O Solomon te avisa quando algo importante acontece no mercado. Notícias filtradas, dados em tempo real e comparativos úteis — tudo adaptado ao seu perfil e direto no WhatsApp.
+      <p className="text-white/80 text-sm md:text-base leading-tight max-w-[90%] md:max-w-[460px] mt-4">
+        O Solomon te envia só o que interessa: alertas inteligentes, dados ao vivo e oportunidades. Sem ruído. Sem distração.
       </p>
 
       <div className="mt-8">
         <a
-          href="https://pay.solomonchat.com" // Link de pagamento atualizado
+          href="https://pay.solomonchat.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 text-[#0f172a] text-sm md:text-lg font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
+          className="inline-flex items-center gap-2 text-[#0f172a] text-sm md:text-base font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
         >
           <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
-          Comece a Investir com IA {/* Texto CTA atualizado */}
+          Ative seu Agente de investimentos
         </a>
       </div>
     </motion.div>

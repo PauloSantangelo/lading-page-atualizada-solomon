@@ -8,7 +8,7 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 import arrowUp from "./arrow-up.svg";
 import instagram from "./instagram.svg";
-import teste from "./teste.webp";
+import teste from "./robo-solomon.webp";
 import teste2 from "./teste2.webp";
 import teste3 from "./teste3.webp";
 import print1 from "./print1.webp";

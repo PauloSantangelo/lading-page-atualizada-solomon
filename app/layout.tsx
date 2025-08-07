@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./styles/globals.css";
 
@@ -11,15 +11,25 @@ const poppins = Poppins({
   variable: "--poppins",
 });
 
+// ✅ Metadados principais
 export const metadata: Metadata = {
   title: "Solomon",
   description: "Seu Agente de Investimentos com Inteligência Artificial",
   authors: [{ name: "VIBE", url: "https://vibe.digital" }],
   applicationName: "Solomon",
-  viewport: "width=device-width, initial-scale=1.0",
-  themeColor: "#000000",
-  colorScheme: "dark",
 };
+
+// ✅ Viewport separado (obrigatório agora)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+};
+
+// ✅ ThemeColor separado
+export const themeColor = "#000000";
+
+// ✅ Color scheme separado
+export const colorScheme = "dark";
 
 export default function RootLayout({
   children,
