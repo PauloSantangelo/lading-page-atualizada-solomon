@@ -5,37 +5,32 @@ import "./styles/globals.css";
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
-  weight: [
-    "100", "200", "300", "400", "500", "600", "700", "800", "900"
-  ],
+  weight: ["100","200","300","400","500","600","700","800","900"],
   variable: "--poppins",
 });
 
-// ✅ Metadados principais
 export const metadata: Metadata = {
   title: "Solomon",
   description: "Seu Agente de Investimentos com Inteligência Artificial",
   authors: [{ name: "VIBE", url: "https://vibe.digital" }],
   applicationName: "Solomon",
+  // themeColor deve ficar aqui (ou no viewport)
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  // Se quiser forçar meta color-scheme (opcional e não obrigatório):
+  // other: { "color-scheme": "dark" },
 };
 
-// ✅ Viewport separado (obrigatório agora)
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1.0,
+  // Você poderia colocar themeColor aqui em vez do metadata, se preferir:
+  // themeColor: "#000000",
 };
 
-// ✅ ThemeColor separado
-export const themeColor = "#000000";
-
-// ✅ Color scheme separado
-export const colorScheme = "dark";
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={`${poppins.variable} font-serif bg-black text-white`}>
