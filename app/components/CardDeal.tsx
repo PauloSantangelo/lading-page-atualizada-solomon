@@ -11,14 +11,14 @@ function BackgroundAndEffects() {
     <div className="fixed inset-0 -z-10 h-full w-full bg-[#00040f]">
       <div className="absolute left-0 top-[-10rem] -z-10 h-[30rem] w-[30rem] transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
         <div 
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#00c6ff] to-[#0072ff] opacity-20"
-            style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'}}
+          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#00c6ff] to-[#0072ff] opacity-20"
+          style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'}}
         />
       </div>
       <div className="absolute bottom-0 right-0 -z-10 h-[30rem] w-[40rem] transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
         <div 
-            className="relative left-[calc(50%+10rem)] aspect-[1155/678] w-[36.125rem] translate-x-1/2 rotate-[-20deg] bg-gradient-to-tr from-[#0072ff] to-[#001f44] opacity-25"
-            style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'}}
+          className="relative left-[calc(50%+10rem)] aspect-[1155/678] w-[36.125rem] translate-x-1/2 rotate-[-20deg] bg-gradient-to-tr from-[#0072ff] to-[#001f44] opacity-25"
+          style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)'}}
         />
       </div>
     </div>
@@ -28,6 +28,15 @@ function BackgroundAndEffects() {
 const CardDeal = () => {
   const prints = ["/print1.webp", "/print2.webp", "/print3.webp"];
   const [current, setCurrent] = useState(0);
+
+  // FUNÇÃO PARA RASTREAR O CLIQUE DO PIXEL
+  const handleAssinarClick = () => {
+    // Verificamos se o Pixel está carregado.
+    if (typeof window.fbq === 'function') {
+      // Disparamos o evento 'Purchase' (Compra) no Pixel.
+      window.fbq('track', 'Purchase', { currency: 'BRL', value: 99.90 });
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -62,6 +71,7 @@ const CardDeal = () => {
             href="https://pay.solomonchat.com"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleAssinarClick} // <-- Adicionei o evento de clique aqui
             className="mt-10 inline-flex items-center gap-3 text-white text-base md:text-lg font-semibold bg-gradient-to-br from-cyan-500 to-blue-600 px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
             whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 200, 255, 0.3)" }}
             whileTap={{ scale: 0.95 }}

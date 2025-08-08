@@ -27,6 +27,15 @@ function SectionBackground() {
 }
 
 const InteractiveGallery = () => {
+  // FUNÇÃO PARA RASTREAR O CLIQUE DO PIXEL
+  const handleAssinarClick = () => {
+    // Verificamos se o Pixel está carregado.
+    if (typeof window.fbq === 'function') {
+      // Disparamos o evento 'Purchase' (Compra) no Pixel.
+      window.fbq('track', 'Purchase', { currency: 'BRL', value: 99.90 });
+    }
+  };
+
   const [[activeIndex, direction], setActiveIndex] = useState([
     Math.floor(prints.length / 2),
     0,
@@ -205,9 +214,10 @@ const InteractiveGallery = () => {
         {/* Botão CTA */}
         <div className="flex justify-center mt-20">
           <motion.a
-            href="https://pay.solomonchat.com" // Link de pagamento atualizado
+            href="https://pay.solomonchat.com"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleAssinarClick} // <-- Adicionei o evento de clique aqui
             className="inline-flex items-center gap-3 text-white text-base md:text-lg font-semibold bg-gradient-to-br from-cyan-500 to-blue-600 px-8 py-4 rounded-xl shadow-lg shadow-cyan-500/20 transition-all"
             whileHover={{
               scale: 1.05,
@@ -216,7 +226,7 @@ const InteractiveGallery = () => {
             whileTap={{ scale: 0.95 }}
           >
             <BrainCircuit className="w-6 h-6" />
-            Comece a Investir com IA {/* Texto CTA atualizado */}
+            Comece a Investir com IA
           </motion.a>
         </div>
       </div>

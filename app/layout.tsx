@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./styles/globals.css";
-import Script from "next/script"; // <-- Adicionei esta linha
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,15 +15,16 @@ export const metadata: Metadata = {
   description: "Seu Agente de Investimentos com Inteligência Artificial",
   authors: [{ name: "VIBE", url: "https://vibe.digital" }],
   applicationName: "Solomon",
+};
+
+// themeColor foi movido para o viewport
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
-};
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1.0,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -4,6 +4,19 @@ import Image from 'next/image';
 import logo from '../../public/logo.webp';
 
 const PricingPlans = () => {
+  // FUNÇÃO PARA RASTREAR O CLIQUE DO PIXEL
+  // Agora a função aceita o nome do plano e o valor como parâmetros
+  const handleAssinarClick = (plano: string, valor: number) => {
+    if (typeof window.fbq === 'function') {
+      // Disparamos o evento 'Purchase' com dados mais detalhados
+      window.fbq('track', 'Purchase', { 
+        currency: 'BRL',
+        value: valor,
+        content_name: `Assinatura ${plano}`,
+      });
+    }
+  };
+
   return (
     <section
       id="planos"
@@ -44,6 +57,7 @@ const PricingPlans = () => {
             href="https://pay.solomonchat.com?plano=mensal"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => handleAssinarClick('Mensal', 39.90)} // <-- Passando os parâmetros
             className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a] z-10"
           >
             Escolher Mensal
@@ -66,6 +80,7 @@ const PricingPlans = () => {
             href="https://pay.solomonchat.com?plano=anual"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => handleAssinarClick('Anual', 29.90)} // <-- Passando os parâmetros
             className="bg-[#00f6ff] hover:bg-[#00e0e0] transition px-5 py-2 rounded-md font-medium w-full text-center text-[#0f172a]"
           >
             Escolher Anual

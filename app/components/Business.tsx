@@ -45,59 +45,71 @@ const FeatureCard = ({ icon, title, content, index }: FeatureCardProps) => (
   </div>
 );
 
-const Business = () => (
-  <section
-    id="Sobre"
-    className="section scroll-mt-20"
-    aria-labelledby="business-heading"
-  >
-    <motion.div
-      className="sectionInfo"
-      variants={slideIn("left", "tween", 0.2, 1.5)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
+const Business = () => { // <-- Transformei em uma função regular para adicionar a lógica
+  // FUNÇÃO PARA RASTREAR O CLIQUE DO PIXEL
+  const handleAssinarClick = () => {
+    // Verificamos se o Pixel está carregado.
+    if (typeof window.fbq === 'function') {
+      // Disparamos o evento 'Purchase' (Compra) no Pixel.
+      window.fbq('track', 'Purchase', { currency: 'BRL', value: 99.90 });
+    }
+  };
+
+  return (
+    <section
+      id="Sobre"
+      className="section scroll-mt-20"
+      aria-labelledby="business-heading"
     >
-      <h2
-        id="business-heading"
-        className="font-bold text-white text-[22px] sm:text-[32px] md:text-[38px] leading-tight md:leading-[50px]"
+      <motion.div
+        className="sectionInfo"
+        variants={slideIn("left", "tween", 0.2, 1.5)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
       >
-        Clareza e velocidade no que realmente importa.
-        <br className="sm:block hidden" />
-        <span className="text-gradient">Tudo direto no seu WhatsApp.</span>
-      </h2>
-
-      <p className="text-white/80 text-sm md:text-base leading-tight max-w-[90%] md:max-w-[460px] mt-4">
-        O Solomon te envia só o que interessa: alertas inteligentes, dados ao vivo e oportunidades. Sem ruído. Sem distração.
-      </p>
-
-      <div className="mt-8">
-        <a
-          href="https://pay.solomonchat.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-[#0f172a] text-sm md:text-base font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
+        <h2
+          id="business-heading"
+          className="font-bold text-white text-[22px] sm:text-[32px] md:text-[38px] leading-tight md:leading-[50px]"
         >
-          <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
-          Ative seu Agente de investimentos
-        </a>
+          Clareza e velocidade no que realmente importa.
+          <br className="sm:block hidden" />
+          <span className="text-gradient">Tudo direto no seu WhatsApp.</span>
+        </h2>
+
+        <p className="text-white/80 text-sm md:text-base leading-tight max-w-[90%] md:max-w-[460px] mt-4">
+          O Solomon te envia só o que interessa: alertas inteligentes, dados ao vivo e oportunidades. Sem ruído. Sem distração.
+        </p>
+
+        <div className="mt-8">
+          <a
+            href="https://pay.solomonchat.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleAssinarClick} // <-- Adicionei o evento de clique aqui
+            className="inline-flex items-center gap-2 text-[#0f172a] text-sm md:text-base font-semibold bg-[#00f6ff] hover:bg-[#00e0e0] transition px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-xl"
+          >
+            <BrainCircuit className="w-5 h-5 md:w-6 md:h-6" />
+            Ative seu Agente de investimentos
+          </a>
+        </div>
+      </motion.div>
+
+      <div className="sectionImg flex-col mt-10 md:mt-0">
+        {Sobre.map((feature, index) => (
+          <motion.div
+            key={feature.id}
+            variants={fadeIn("left", "spring", index * 0.5, 1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <FeatureCard {...feature} index={index} />
+          </motion.div>
+        ))}
       </div>
-    </motion.div>
-
-    <div className="sectionImg flex-col mt-10 md:mt-0">
-      {Sobre.map((feature, index) => (
-        <motion.div
-          key={feature.id}
-          variants={fadeIn("left", "spring", index * 0.5, 1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <FeatureCard {...feature} index={index} />
-        </motion.div>
-      ))}
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Business;
