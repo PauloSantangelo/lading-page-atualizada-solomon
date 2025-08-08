@@ -1,0 +1,47 @@
+[33mcommit 47590c2401d5da4b033977aff6fd162f09c7ef9f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Paulo Santangelo <paulocbsantangelo@gmail.com>
+Date:   Thu Aug 7 16:14:29 2025 -0300
+
+    Ajustes site
+
+[33mcommit 80633a055e19a3d6e59a910e7acfe8101102dfe9[m
+Author: Paulo Santangelo <paulocbsantangelo@gmail.com>
+Date:   Thu Aug 7 16:12:45 2025 -0300
+
+    Ajustes site
+
+[33mcommit fb0e169ba829a9b5f39c48e4d4f644a03b4c784f[m
+Author: Paulo Santangelo <paulocbsantangelo@gmail.com>
+Date:   Fri Jul 11 10:18:17 2025 -0300
+
+    Adiciona sitemap e robots para o projeto Solomon
+
+[33mcommit 4888a4ba22db477b412ddf14575f8902cb02fee6[m
+Author: Paulo Santangelo <paulocbsantangelo@gmail.com>
+Date:   Thu Jul 10 14:38:51 2025 -0300
+
+    feat: adiciona CustomHead para melhorar SEO e metadados
+
+[33mcommit ecc083a1e2b5b28fdae1d5a62e456e18722aaf02[m
+Author: Paulo Santangelo <paulocbsantangelo@gmail.com>
+Date:   Fri Jul 4 15:21:07 2025 -0300
+
+    Versão inicial com galeria de prints do Solomon
+
+[33mcommit f30459989280441186b4f68e00d987b79a9019d8[m
+Author: Paulo Santangelo <paulocbsantangelo@gmail.com>
+Date:   Wed May 21 17:57:32 2025 -0300
+
+    Melhoria de performance e responsividade: animações otimizadas, FeedbackCard padronizado, hover animado, ajustes visuais e SEO 100%
+
+[33mcommit e3bc58d503de2a90ef37fad738f04578aa0ea590[m
+Author: Paulo Santangelo <paulocbsantangelo@gmail.com>
+Date:   Wed May 21 16:13:33 2025 -0300
+
+    Remove Stats component e limpa dados de redes e links antigos
+
+[33mcommit 99759cf0a92d13e19c22a01dddaa2c68aff06986[m
+Author: PauloSantangelo <paulocbsantangelo@gmail.com>
+Date:   Fri Nov 1 10:53:51 2024 -0300
+
+    first commit
