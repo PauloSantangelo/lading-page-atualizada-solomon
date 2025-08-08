@@ -39,15 +39,15 @@ const Hero = () => {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden text-white bg-black">
-      {/* 🎞️ Vídeo de fundo */}
+      {/* 🎞️ Vídeo de fundo com opacidade reduzida */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-50" // <-- Alteração aqui
       >
-        <source src="/background.mp4" type="video/mp4" />
+        <source src="/0808.mp4" type="video/mp4" />
       </video>
 
       {/* 🤖 Robô no fundo (desktop apenas) */}
